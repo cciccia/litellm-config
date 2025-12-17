@@ -17,7 +17,7 @@ model_list:
           threshold: BLOCK_NONE
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: os.environ/VERTEX_LOCATION
-      vertex_credentials: /tmp/vertex-key.json
+      vertex_credentials: /etc/secrets/vertex-key.json
       stream: false
 
 general_settings:
