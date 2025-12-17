@@ -1,0 +1,24 @@
+litellm_settings:
+  set_verbose: true
+  detailed_debug: true  # Extra detailed logs
+
+model_list:
+  - model_name: gemini-3.0
+    litellm_params:
+      model: vertex_ai/gemini-3-pro-preview
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_credentials: /tmp/vertex-key.json
+      stream: false
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
